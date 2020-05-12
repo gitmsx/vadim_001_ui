@@ -88,8 +88,8 @@ namespace UserControl001
 
             if (MousePressed)
             {
-                graph.DrawRectangle(new Pen(Color.FromArgb(25, Color.Black)), rect);
-                graph.FillRectangle(new SolidBrush(Color.FromArgb(35, Color.Black)), rect);
+                graph.DrawRectangle(new Pen(Color.FromArgb(55, Color.Red)), rect);
+                graph.FillRectangle(new SolidBrush(Color.FromArgb(75, Color.Green)), rect);
 
             }
 
