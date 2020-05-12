@@ -13,6 +13,13 @@ namespace UserControl001
     class Vad_Label : Control
 
     {
+
+
+        private StringFormat sf = new StringFormat();
+
+
+
+
         public Vad_Label()
         {
             
@@ -22,6 +29,8 @@ namespace UserControl001
             Size = new Size(100,30); // Egolds video
             BackColor = Color.Aqua;
             ForeColor = Color.MediumAquamarine;
+            sf.Alignment = StringAlignment.Center;
+            sf.LineAlignment = StringAlignment.Center;
         }
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -33,7 +42,9 @@ namespace UserControl001
             Rectangle rect = new Rectangle(0, 0, Width-1, Height-1);
 
             graph.DrawRectangle(new Pen(BackColor),rect);
-            graph.FillRectangle(new SolidBrush(Color.BlueViolet, rect);
+            graph.FillRectangle(new SolidBrush(Color.BlueViolet), rect);
+
+            graph.DrawString(Text, Font, new SolidBrush( ForeColor ), rect,sf);
 
         }
 
