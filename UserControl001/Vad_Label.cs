@@ -16,19 +16,36 @@ namespace UserControl001
 
 
         private StringFormat sf = new StringFormat();
+        private bool MouseEntred = false;
+        
 
 
+        protected override void OnMouseEnter(EventArgs e)
+        {
+            base.OnMouseEnter(e);
+            MouseEntred = true;
+            Invalidate();
+        }
+
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            base.OnMouseLeave(e);
+            MouseEntred = false;
+            Invalidate();
+        }
 
 
         public Vad_Label()
         {
-            
+
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.SupportsTransparentBackColor | ControlStyles.UserPaint, true);
             DoubleBuffered = true;
 
-            Size = new Size(100,30); // Egolds video
+            Size = new Size(100, 30); // Egolds video
             BackColor = Color.Aqua;
-            ForeColor = Color.MediumAquamarine;
+                ForeColor = Color.Gray;
+
             sf.Alignment = StringAlignment.Center;
             sf.LineAlignment = StringAlignment.Center;
         }
@@ -41,15 +58,28 @@ namespace UserControl001
 
             Rectangle rect = new Rectangle(0, 0, Width-1, Height-1);
 
-            graph.DrawRectangle(new Pen(BackColor),rect);
-            graph.FillRectangle(new SolidBrush(Color.BlueViolet), rect);
+            graph.DrawRectangle(new Pen(BackColor), rect);
 
-            graph.DrawString(Text, Font, new SolidBrush( ForeColor ), rect,sf);
+            graph.FillRectangle(new SolidBrush(Color.BlueViolet), rect);
+            graph.DrawString(Text, Font, new SolidBrush(ForeColor), rect, sf);
+
+
+            if (MouseEntred)
+            {
+                graph.DrawRectangle(new Pen(Color.FromArgb(25, Color.White)), rect);
+                graph.FillRectangle(new SolidBrush(Color.FromArgb(25, Color.White)), rect);
+
+            }
+            else
+            {
+
+ 
+            }
 
         }
 
 
 
-    
+
     }
 }
