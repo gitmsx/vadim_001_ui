@@ -17,7 +17,21 @@ namespace UserControl001
 
         private StringFormat sf = new StringFormat();
         private bool MouseEntred = false;
-        
+        private bool MousePressed = false;
+
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+            MousePressed = true;
+            Invalidate();
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            base.OnMouseUp(e);
+            MousePressed = false;
+            Invalidate();
+        }
 
 
         protected override void OnMouseEnter(EventArgs e)
@@ -67,14 +81,18 @@ namespace UserControl001
             if (MouseEntred)
             {
                 graph.DrawRectangle(new Pen(Color.FromArgb(25, Color.White)), rect);
-                graph.FillRectangle(new SolidBrush(Color.FromArgb(25, Color.White)), rect);
+                graph.FillRectangle(new SolidBrush(Color.FromArgb(45, Color.White)), rect);
 
             }
-            else
+
+
+            if (MousePressed)
             {
+                graph.DrawRectangle(new Pen(Color.FromArgb(25, Color.Black)), rect);
+                graph.FillRectangle(new SolidBrush(Color.FromArgb(35, Color.Black)), rect);
 
- 
             }
+
 
         }
 
