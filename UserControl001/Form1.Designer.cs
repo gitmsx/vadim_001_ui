@@ -33,9 +33,9 @@
             // 
             // vad_Label1
             // 
-            this.vad_Label1.Location = new System.Drawing.Point(346, 13);
+            this.vad_Label1.Location = new System.Drawing.Point(356, 69);
             this.vad_Label1.Name = "vad_Label1";
-            this.vad_Label1.Size = new System.Drawing.Size(175, 68);
+            this.vad_Label1.Size = new System.Drawing.Size(100, 30);
             this.vad_Label1.TabIndex = 0;
             this.vad_Label1.Text = "vad_Label1";
             // 
