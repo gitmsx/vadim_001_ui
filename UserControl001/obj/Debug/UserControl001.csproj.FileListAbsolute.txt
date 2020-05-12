@@ -7,3 +7,4 @@ C:\Users\vaduser\source\repos\UserControl001\UserControl001\obj\Debug\UserContro
 C:\Users\vaduser\source\repos\UserControl001\UserControl001\obj\Debug\UserControl001.csproj.CoreCompileInputs.cache
 C:\Users\vaduser\source\repos\UserControl001\UserControl001\obj\Debug\UserControl001.exe
 C:\Users\vaduser\source\repos\UserControl001\UserControl001\obj\Debug\UserControl001.pdb
+C:\Users\vaduser\source\repos\UserControl001\UserControl001\obj\Debug\UserControl001.Form1.resources
